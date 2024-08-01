@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.MainPage" Background="white" NavigationPage.HasNavigationBar="False" BackgroundImageSource="@drawable/background">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="Main">
+            <Image Source="logo" Margin="20" x:Name="logo" />
+
+            <Entry FontSize="20" Placeholder="Login" WidthRequest="200" Margin="10" HorizontalTextAlignment="Center" x:Name="TB_Login" TextColor="White" PlaceholderColor="White" Completed="TB_Login_Completed"/>
+            <Entry FontSize="20" Placeholder="Password" IsPassword="True" WidthRequest="200" Margin="10" HorizontalTextAlignment="Center" x:Name="TB_password" TextColor="White" PlaceholderColor="White" Completed="Button_Clicked"/>
+            <Button Text="Авторизоваться" Clicked="Button_Clicked" TextColor="White" BorderColor="White" BorderWidth="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#fdc78d" Offset="0.1" />
+                        <GradientStop Color="#fa9edf" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Wait" IsVisible="false">
+            <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200">
+                <ActivityIndicator x:Name="activityIndocator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="White" IsRunning="False"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

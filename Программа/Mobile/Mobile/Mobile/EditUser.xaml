@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.EditUser" x:Name="Main" Title="Добавление пользователя">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Margin="20">
+
+                <Label Text="Фамилия" />
+                <Entry x:Name="LastNameEntry" Placeholder="Введите фамилию" />
+
+                <Label Text="Имя" />
+                <Entry x:Name="FirstNameEntry" Placeholder="Введите имя" />
+
+                <Label Text="Логин" />
+                <Entry x:Name="LoginEntry" Placeholder="Введите логин" />
+
+                <Label Text="Пароль" x:Name="L_Password" IsVisible="false"/>
+                <Entry x:Name="PasswordEntry" Placeholder="Введите пароль" IsVisible="false" />
+
+                <Label Text="Роль" />
+                <Picker x:Name="RolePicker" Title="Выберите роль">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Инженер-программист</x:String>
+                            <x:String>Ведущий инженер</x:String>
+                            <x:String>Начальник отдела</x:String>
+                            <x:String>Генеральный директор</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button Text="Сохранить" x:Name="Save_Button" Clicked="Save_Button_Clicked" TextColor="White" BorderColor="White" BorderWidth="1" Margin="0,0,0,20">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#fdc78d" Offset="0.1" />
+                                <GradientStop Color="#fa9edf" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="Удалить" x:Name="Delete_Button" TextColor="White" BorderColor="White" BorderWidth="1" Margin="0,0,0,20" IsVisible="False" Clicked="Delete_Button_Clicked">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#fdc78d" Offset="0.1" />
+                                <GradientStop Color="#fa9edf" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Wait" IsVisible="false">
+                <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200">
+                    <ActivityIndicator x:Name="activityIndocator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="White" IsRunning="False"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

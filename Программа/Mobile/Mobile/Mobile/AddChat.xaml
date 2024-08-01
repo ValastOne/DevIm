@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.AddChat" BackgroundImageSource="background" Title="Поиск пользователя">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout x:Name="Main">
+                <Entry x:Name="TB_Search" FontSize="20" Placeholder="Search" WidthRequest="200" Margin="10" HorizontalTextAlignment="Center" TextColor="White" PlaceholderColor="White" Completed="TB_Search_Completed" TextChanged="TB_Login_TextChanged"/>
+                <ListView x:Name="LV_Users" ItemTapped="LV_Users_ItemTapped" ItemsSource="{Binding list}" CachingStrategy="RecycleElement" RowHeight="70">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="50">
+                                <StackLayout Margin="0,0,0,10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding name}"  FontSize="20" TextColor="{StaticResource PrimaryColor}"/>
+                                        <Label Text="{Binding surname}" FontSize="20" TextColor="{StaticResource PrimaryColor}"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding login}" FontSize="18" TextColor="White"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Wait" IsVisible="false">
+                <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200">
+                    <ActivityIndicator x:Name="activityIndocator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="White" IsRunning="False"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

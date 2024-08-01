@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mobile": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

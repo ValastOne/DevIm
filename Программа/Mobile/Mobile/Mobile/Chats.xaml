@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Chats" NavigationPage.BackButtonTitle="null" NavigationPage.HasBackButton="false" Title="Cообщения" BackgroundImageSource="background" x:Name="Window">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <StackLayout x:Name="Main">
+            <ListView x:Name="LV_Chats"
+            ItemsSource="{Binding MessangesList}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement" RowHeight="100">
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding title}" FontSize="30" Margin="10" TextColor="White" FontFamily="Bold" VerticalTextAlignment="Center" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding last_message}" LineBreakMode="NoWrap" FontSize="20" TextColor="Black" Margin="10,0,0,0" HorizontalOptions="Start" />
+                                    <Label Grid.Column="1" Text="{Binding DateTime}" FontSize="15" TextColor="Gray" HorizontalTextAlignment="Center" HorizontalOptions="End" Margin="10,0,0,10"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Wait" IsVisible="false">
+            <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200">
+                <ActivityIndicator x:Name="activityIndocator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="White" IsRunning="False"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Null_Mess" IsVisible="false">
+            <Label Text="Сейчас у вас нет переписок." TextColor="White" FontSize="20"/>
+            <Label Text="Добавить перписку?" TextColor="White" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Button Text="Добавить" Clicked="ToolbarItem_Clicked" TextColor="White" BorderColor="White" BorderWidth="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#fdc78d" Offset="0.1" />
+                        <GradientStop Color="#fa9edf" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackLayout>
+    </Grid>
+</ContentPage>

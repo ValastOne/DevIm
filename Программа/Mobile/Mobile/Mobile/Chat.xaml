@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Chat" x:Name="Window">
+    <ContentPage.Content>
+        <Grid>
+            <Grid RowDefinitions="*, auto"
+              Margin="10" x:Name="Main">
+                <ListView ItemsSource="{Binding MessagesList}"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True" x:Name="LV_Messages" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>                        
+                            <ViewCell>
+                                <Grid RowDefinitions="auto, auto">
+                                    <Grid ColumnDefinitions="40, *" IsVisible="{Binding visable}">
+                                        <!--<Label Text="{Binding UserName}"/>-->
+                                        <Frame CornerRadius="30"
+                                           Grid.Column="1"
+                                           HorizontalOptions="End"
+                                           HasShadow="True"
+                                           Margin="0"
+                                           BackgroundColor="{StaticResource PrimaryColor}"
+                                           Padding="10">
+                                            <Label Text="{Binding content}"
+                                               Margin="10"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               LineBreakMode="WordWrap"/>
+                                        </Frame>
+                                    </Grid>
+                                    <Grid Margin="0,0,10,0" ColumnDefinitions="*, 40"
+                                      Grid.Row="1"
+                                      IsVisible="{Binding visable,Converter={StaticResource BooleanToVisibility},ConverterParameter=Inverse}">
+                                        <!--<Label Text="{Binding UserName}"/>-->
+                                        <Frame CornerRadius="30"
+                                           HasShadow="True"
+                                           Margin="0"
+                                           BackgroundColor="DeepSkyBlue" 
+                                           Padding="10">
+                                            <Label Text="{Binding content}"
+                                               Margin="10"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               LineBreakMode="WordWrap"/>
+                                        </Frame>
+                                    </Grid>
+                               
+                                    <!--<Grid RowDefinitions="auto, auto"  >
+                                    <Label Text="{Binding UserName}"/>
+                                    <Label Text="{Binding Message}"/>
+                                </Grid>-->
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Здесь пока ничего нет" HorizontalOptions="Center" VerticalOptions="Center" x:Name="Space" IsVisible="false"/>
+                <StackLayout Grid.Row="1"
+                         Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry x:Name="TB_Send"                   
+                       HorizontalOptions="FillAndExpand" Completed="Button_Clicked"></Entry>
+                    <ImageButton Source="send" WidthRequest="50" HeightRequest="50" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </Grid>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="Wait" IsVisible="false">
+                <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200">
+                    <ActivityIndicator x:Name="activityIndocator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource PrimaryColor}" IsRunning="False"/>
+                </StackLayout>
+            </StackLayout>            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

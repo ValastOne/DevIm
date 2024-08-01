@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Excample"
+             Title="Профиль" BackgroundImageSource="background">
+
+    <ContentPage.Content>        
+        <StackLayout VerticalOptions="FillAndExpand" Padding="20">
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="White">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image Source="profile.png" HeightRequest="100" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="" x:Name="Name" FontSize="Title" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="" x:Name="Surname" FontSize="Title" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    
+                    <Label Text="" x:Name="Login" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>      
+                </StackLayout>
+            </Frame>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <Button Text="Страница администратора" Clicked="Admin_Button_Clicked" x:Name="Admin_Button" TextColor="White" BorderColor="White" BorderWidth="1" Margin="0,0,0,20">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Color="#fdc78d" Offset="0.1" />
+                            <GradientStop Color="#fa9edf" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Text="Выход" Clicked="LogOut_Button_Clicked" x:Name="LogOut_Button" TextColor="White" BorderColor="White" BorderWidth="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Color="#fdc78d" Offset="0.1" />
+                            <GradientStop Color="#fa9edf" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\LoginInDevim.exe.config
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\LoginInDevim.exe
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\LoginInDevim.pdb
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\obj\Debug\LoginInDevim.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\obj\Debug\LoginInDevim.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\obj\Debug\LoginInDevim.csproj.CopyComplete
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\obj\Debug\LoginInDevim.exe
+C:\Users\User\Desktop\Диплом\LoginInDevim\LoginInDevim\obj\Debug\LoginInDevim.pdb
